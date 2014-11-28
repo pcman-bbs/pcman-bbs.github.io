@@ -1,0 +1,74 @@
+body {
+	background-color: #FFFF99;
+	margin: 10px;
+	padding: 0;
+	font-family: Arial, sans-serif;
+}
+
+p {
+	margin: 0 0 10px 0;
+}
+
+div#frame {
+	margin: 0 auto;
+	width: 800px;
+	background-color: #fff;
+}
+
+div#footer {
+	height: 20px;
+	background-color: #222;
+	position: relative;
+	color: #fff;
+	border-color: #fff;
+	border-width: 1px;
+	border-style: solid;
+	text-align: center;
+	font-size: small;
+	line-height: 20px;
+}
+
+div#header {
+	height: 68px;
+	background-color: #663300;
+	position: relative;
+	color: #fff;
+	border-color: #fff;
+	border-width: 1px;
+	border-style: solid;
+}
+
+div#header img.logo {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	border: 0;
+}
+
+div#header h1 {
+	position: absolute;
+	top: 6px;
+	left: 68px;
+	margin: 0;
+	padding: 0;
+}
+
+div#header span.description {
+	position: absolute;
+	top: 40px;
+	left: 68px;
+	font-size: small;
+	color: #FFFFFF;
+}
+
+div#main {
+	padding: 10px;
+	font-size: 12px;
+}
+
+.ui-tabs-panel h2 {
+	font-size: 18px;
+	margin: 10px;
+	padding: 0;
+}
+
