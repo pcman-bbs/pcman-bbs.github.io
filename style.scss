@@ -19,7 +19,10 @@ header {
 }
 
 nav {
-	color: blue;
+	color: #333;
+	a {
+		text-decoration: none;
+	}
 	ul {
 		padding: 0;
 		margin: 0;
@@ -40,6 +43,10 @@ nav {
 	width: 80vw;
 	margin: 0 auto;
 	padding-top: 1em;
+}
+
+a {
+	color: inherit;
 }
 
 p {
