@@ -13,7 +13,11 @@ body {
 
 header {
 	width: 100%;
-	h1, p {
+	h1 {
+		@extend p;
+		color: #FFFF00;
+	}
+	p {
 		padding-left: 10vw;
 	}
 }
@@ -48,8 +52,28 @@ a {
 	color: inherit;
 }
 
+ul {
+	list-style-type: disclosure-closed;
+}
+
 p, li {
 	line-height: 1.5em;
+}
+
+table {
+	border-collapse: collapse;
+
+	tr {
+		th {
+			@extend td;
+			background-color: #ffffff;
+			color: #000000;
+		}
+		td {
+			padding: 10px;
+			border: 1px solid #fff;
+		}
+	}
 }
 
 aside {
