@@ -1,0 +1,227 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+  <link rel="stylesheet" href="content.css" type="text/css">
+  <title>PCMan X pure GTK+ 2</title>
+	<style>body { background-color:#FFFFFF; color: #000000; margin-left:20px; margin-right:20px; margin-top:6px; margin-bottom:0px }
+h1.title { background-color:#0080FF; color:#FFFFFF }
+h2.title { background-color:#DDDDDD; color:#000000 }
+h3.title { background-color:#000000; color:#FFFFFF }
+dt {font-weight:bold;}
+dd {color:rgb(60,60,60)}
+code {background-color:#000000; color:#FFFFFF;}
+code.script {background-color:#FFFFFF; color:#000000;}
+code.comment {background-color:#FFFFFF; color:#AAAAAA;}
+div.link:hover { background-color:#0080FF; }
+a.head:link { color:#0080FF; text-decoration:none; font-weight:bold; }
+a.head:visited { color:#000000; text-decoration:none; font-weight:bold; }
+a.head:hover { background-color:#0080FF; color:#FFFFFF; text-decoration:none; font-weight:bold; }
+a.head:active { background-color:#0080FF; color:#FFFFFF; text-decoration:none; font-weight:bold; }
+td { padding:4px; border-color:#DDDDDD; border-width:2px; border-style:solid; }
+th { color:#FFFFFF; background-color:#000000; padding:4px; border-color:#DDDDDD; border-width:2px; border-style:solid; }
+td.google { padding:0px; border-color:#DDDDDD; border-width:0px; border-style:solid; }
+th.google { color:#FFFFFF; background-color:#000000; padding:0px; border-color:#DDDDDD; border-width:0px; border-style:solid; }</style>
+</head>
+<body>
+<h1 class="title" style="font-weight: bold;">
+<center>PCMan X pure GTK+ 2</center>
+</h1>
+<table border="0" cellspacing="0" width = 100%><tr>
+<td>
+用 GTK+ 2.x 開發的自由 BBS 連線軟體   Copyright &copy; 2005
+<p>
+授權方式： <a href="http://www.gnu.org/copyleft/gpl.html">GNU General Public License</a> (GPL)</p>
+<p>
+開發者:
+</p>
+<ul>
+  <li><a href="http://pcman.ptt.cc/">Hong Jen Yee 洪任諭 (pcman)</a> (原作者及主要開發者)</li>
+  <li><a href="http://jserv.sayya.org/">Jim Huang 黃敬群 (jserv)</a></li>
+  <li><a href="http://stu.csie.ncnu.edu.tw/%7Ekanru.96/">Kanru Chen 陳侃如 (kanru)</a></li>
+  <li>Chia I Wu 吳佳一 (olv)</li>
+  <li><a href="http://fd.idv.tw/">Shih-Yuan Lee 李世元 (FourDollars)</a></li>
+  <li><a href="http://www.utcr.org/">Youchen Lee 李宥辰 (copyleft)</a></li>
+  <li><a href="http://emfoxzhou.googlepages.com/">Emfox Zhou 周玮 (emfox)</a></li>
+</ul>
+</td>
+<td bgcolor="#DDDDDD">
+<ul>
+  <li><a href="#howtoget">取得方式</a></li>
+  <li><a href="#requirement">編譯需求</a></li>
+  <li><a href="#compile">編譯方式</a></li>
+  <li><a href="#nancy">Nancy Bot 簡易使用說明</a></li>
+  <li><a href="#sitelist">自動更新 BBS 站台列表</a></li>
+  <li><a href="#screenshot">Screenshots</a></li>
+</ul>
+</td>
+</tr></table>
+<br>
+<table border=0 style="background-color: #fff; padding: 0px;" cellspacing=0 align="center">
+  <tr><td>
+  <a href="http://groups.google.com/group/PCManX"><img src="http://groups.google.com/groups/img/3/groups_bar_zh-TW.gif" height=26 width=132 border=0 alt="Google 網上論壇" title="Google 網上論壇"></a>
+  </td>
+  <td style="padding-left: 5px"> <b>訂閱 PCManX</b> </td>
+  <form action="http://groups.google.com/group/PCManX/boxsubscribe">
+  <td style="padding-left: 5px;"> 電子郵件： <input type=text name=email> <input type=submit name="sub" value="訂閱">
+  </td>
+</form>
+</tr>
+</table>
+<a name="howtoget"><h2 class="title">取得方式：</h2></a>
+<ul>
+  <li>發行版本： <a href="/release/?C=M;O=D" target="_blank">按此處下載 PCMan X 所有發行檔案</a>
+  <ul>
+    <li>最新版本：
+    <ul><li><a href="release/pcmanx-gtk2-0.3.9.tar.bz2">pcmanx-gtk2-0.3.9.tar.bz2</a></li></ul>
+    </li>
+    <li>新增功能：</li>
+    <ul>
+      <li>Middle mouse click as tab close (similar behavior under Firefox).</li>
+      <li>GNOME Goal - Clean up GLib and GTK+ includes.  It is known to be easier to migrate to future gtk+ version.</li>
+      <li>Keep version information in libpcmanx-core and perform insanity checks for libpcmanx.</li>
+      <li>Enable [KP_Enter] key in URL entry box.</li>
+      <li>Improved vertical and horizontal center alignment.</li>
+    </ul>
+    <li>錯誤修正：</li>
+    <ul>
+      <li>Prevent compilers from over-optimizing with -ftree-vectorize.</li>
+      <li>gcc 4.4 and gtk+ &lt; 2.10 build failures.</li>
+      <li>Do not call gdk_window_invalidate_rect on a non-realized GtkWidget to avoid Segfault.</li>
+      <li>Avoid memory leak when event is not mouse right-click and unnecessary resource re-allocation.</li>
+      <li>Fix Simplified Chinese translation of "Line" and "Col".</li>
+      <li>Properly handle the character set convertion during copy and paste from X clipboard.</li>
+      <li>Prevent GTK+ from catching F10 and Handle F1-F12 keys.</li>
+      <li>Provide WM_CLASS property for several X window managers.</li>
+      <li>Respect user preference about showing/hiding status bar.</li>
+      <li>Avoid SegFault when closing a disconnected tab.</li>
+      <li>Trim trailing spaces of each line when downloading articles.</li>
+    </ul>
+  </ul>
+  </li>
+  <li>預先編譯版本：</li>
+  <ul><a href="http://www.debian.org/">Debian</a>
+    <ul>加入
+      <ul><code><b>deb http://apt.debian.org.tw unstable main</b></code></ul>
+ 到 sources.list 中，並於 apt-get update 後執行：
+      <ul><code><b>apt-get install pcmanx-gtk2</b></code></ul>
+    </ul>
+  </ul>
+  <ul>Fedora
+    <ul><code><b>yum install pcmanx-gtk2</b></code></ul>
+  </ul>
+  <ul>Mandriva
+    <ul><code><b>urpmi pcmanx-gtk2</b></code></ul>
+  </ul>
+  <ul>Ubuntu
+    <ul><code><b>apt-get install pcmanx-gtk2</b></code></ul>
+  </ul>
+  <li>取得開發中的最新程式碼，請安裝 <a href="http://subversion.tigris.org/">Subversion</a>，並確保 https 連線正常。在終端機下輸入以下指令：
+    <ul>
+      <code><b>svn co https://svn.csie.net/pcmanx/trunk pcmanx-gtk2</b></code>
+    </ul>
+  </li>
+</ul>
+<br>
+<a name="requirement"><h2 class="title">編譯需求：</h2></a>
+<ul>
+  <li>GTK+ 2.4 以上，以 Debian 為例： apt-get install <a href="http://packages.debian.org/stable/libdevel/libgtk2.0-dev">libgtk2.0-dev</a></li>
+  <li>Xft 2.x，以 Debian 為例： apt-get install <a href="http://packages.debian.org/stable/libdevel/libxft-dev">libxft-dev</a></li>
+  <li>Intltool，以 Debian 為例： apt-get install <a href="http://packages.debian.org/stable/devel/intltool">intltool</a> <a href="http://packages.debian.org/stable/devel/intltool-debian">intltool-debian</a></li>
+  <li>Automake 1.10，以 Debian 為例： apt-get install <a href="http://packages.debian.org/stable/devel/automake">automake</a></li>
+  <li>libtool，以 Debian 為例： apt-get install <a href="http://packages.debian.org/stable/devel/libtool">libtool</a></li>
+</ul>
+注意：
+<ul>
+  <li>後兩者只有從 Subversion 取出的開發版本需要，一般的發行版本只需要前三者</li>
+  <li>如果要編譯 Mozilla/Firefox plugin for PCManX，請安裝 Mozilla/Firefox 的開發套件，以 Debian 為例，可以是以下任一：
+    <ul>
+      <li><a href="http://packages.debian.org/stable/devel/mozilla-dev">mozilla-dev</a></li>
+      <li><a href="http://packages.ubuntu.com/hoary/devel/mozilla-firefox-dev">mozilla-firefox-dev</a> (Ubuntu Hoary)</li>
+      <li><a href="http://packages.ubuntu.com/breezy/devel/firefox-dev">firefox-dev</a> (Ubuntu Breezy)</li>
+    </ul>
+  </li>
+</ul>
+<br>
+<a name="compile"><h2 class="title">編譯方式：</h2></a>
+<ul>
+  <li>開發中的功能與選項，請閱讀 <a href="http://svn.csie.net/filedetails.php?repname=pcmanx&path=%2Fpcmanx_pure_gtk2%2FREADME&rev=0&sc=0">README</a></li>
+  <li>./autogen.sh (只有從 Subversion 取出的開發版本需要)</li>
+  <li>./configure --help 查看編譯選項，因為功能持續開發中，項目隨時可能增減</li>
+  <li>./configure [編譯選項，請參閱上行]</li>
+  <li>make ; make install</li>
+</ul>
+<br>
+<a name="nancy"><h2 class="title">Nancy Bot 簡易使用說明：</h2></a>
+Nancy Bot 是用來自動回覆 BBS 水球的機器人。
+<p>
+開啟/關閉方式：
+</p>
+<ul>
+  <li>在 view 選單中，可以針對本連線或所有的連線選擇開啟或關閉機器人。</li>
+  <li>目前只提供一個機器人，您無法選用其他的機器人，我們將在未來的發行版本中提供多機器人支援。</li>
+</ul>
+<p>
+設定方式：
+</p>
+<ul>
+  <li>預設的 Bot 設定檔在 ~/.pcmanx/nancy_bot/ 內的 default.conf,
+default_msg.data和 default_usages.data，設定方式請參考
+/usr/share/pcmanx/nancy_bot/ 內的 example files。</li>
+  <li>Bot 會將它看不懂的句子放到 default_unknow.log，您可以將它修改後附加到 default_msg.data 之後，使它學習到原先看不懂的句子。</li>
+</ul>
+<a name="sitelist"><h2 class="title">「自動更新 BBS 站台列表」設定說明：</h2></a>
+自 2005.09.24 起，<a href="http://free.ym.edu.tw/wiki/">FreeYM 陽明自由軟體站</a>提供用  Wiki 收集全球中文 BBS 站台列表的服務。
+該系統經過設定，每隔一小時會自動跑程式更新，把 Wiki 上收集到的資料整理成 PCMan X 使用的站台列表格式。這項服務，搭配 crontab 的設定，就可以達到自動更新 BBS 站台列表。<br>
+簡單的設定方式如下：
+<ul>
+	<li>先確定系統上有 crontab 和 wget 這兩個程式，沒有的話請安裝</li>
+	<li>執行 crontab -e</li>
+	<li>在開啟的設定檔裡面加入這行：40  20  *   *   *    wget -O ~/.pcmanx/sitelist http://free.ym.edu.tw/pcman/site_list.utf8</li>
+	<li>上面那行的 40 20 表示在每天的晚上 20:40 執行更新，這時間可以隨個人需要自己改。這只是簡單範例，詳細用法請自行查詢。</li>
+</ul>
+<p>
+</p>
+<a name="screenshot"><h2 class="title">Screenshots：</h2></a>
+<br>
+<img style="width: 571px; height: 514px;" alt="" src="screenshots/1.png"><br>
+<br>
+設定及操作介面都很簡單且直觀。<br>
+<br>
+<br>
+<img style="width: 608px; height: 575px;" alt="" src="screenshots/2.png"><br>
+<br>
+收到水球時連線標籤變色，並且可在右下角彈出類似 MSN 的小視窗，點擊後會切換到有來訊的連線。<br>
+此外，畫面右下角的系統列中多了一個圖示，點擊可以快速顯示或隱藏 PCMan X 視窗。<br>
+<br>
+<br>
+<img style="width: 640px; height: 480px;" alt="" src="screenshots/9.png"><br>
+<br>
+PCMan X pure GTK+ 2 也有開發出給 Mozilla/Firefox 的 plug-in，可以在瀏覽器分頁裡面上 BBS。<br>
+<br>
+<br>
+<img style="width: 645px; height: 506px;" alt="" src="screenshots/4.png"><br>
+<br>
+內建兩岸中文 BBS 站台列表，有大量站台位址可供快速查詢使用。<br>
+<br>
+<br>
+<img style="width: 571px; height: 514px;" alt="" src="screenshots/6.png"><br>
+<br>
+具有自動登入功能，只要簡單設定，就可以幫你代填帳號密碼，快速登入 BBS 站&nbsp;<br>
+&nbsp;<br>
+<br>
+<img style="width: 582px; height: 506px;" alt="" src="screenshots/8.png"><br>
+<br>
+內建多種豐富的 BBS 可愛表情符號，按下 Ctrl + Enter 即可叫出。<br>
+<br>
+<br>
+<img style="width: 650px; height: 508px;" alt="" src="screenshots/3.png"><br>
+<br>
+可以用相當簡單的方式編輯「我的最愛」，即可從選單當中快速連線常用站台。<br>
+<br>
+<br>
+<img style="width: 644px; height: 504px;" alt="" src="screenshots/5.png"><br>
+<br>
+</body>
+</html>
+<!-- vim: set expandtab tabstop=2 shiftwidth=2 :>
