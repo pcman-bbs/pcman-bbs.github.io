@@ -1,0 +1,47 @@
+---
+layout: default
+title: Linux
+---
+<main>
+	<article>
+		<h2>PCManX</h2>
+		<p>GTK+ 2.x 開發的自由 BBS 連線軟體</p>
+		<section>
+			<h3>授權方式</h3>
+			<p><a href="http://www.gnu.org/copyleft/gpl.html">GNU General Public License</a> (GPL)</p>
+		</section>
+		<section>
+			<h3>編譯需求</h3>
+			<ul>
+				<li>GTK+ 2.4 以上，以 Debian 為例： apt-get install libgtk2.0-dev</li>
+				<li>Xft 2.x，以 Debian 為例： apt-get install libxft-dev</li>
+				<li>Intltool，以 Debian 為例： apt-get install intltool intltool-debian</li>
+				<li>Automake 1.10，以 Debian 為例： apt-get install automake</li>
+				<li>libtool，以 Debian 為例： apt-get install libtool</li>
+			</ul>
+			<p>注意：後兩者只有從 Git 取出的開發版本需要，一般的發行版本只需要前三者</p>
+		</section>
+		<section>
+			<h3>編譯方式</h3>
+			<ol>
+				<li>開發中的功能與選項，請閱讀 README</li>
+				<li>./autogen.sh (只有從 Subversion 取出的開發版本需要)</li>
+				<li>./configure --help 查看編譯選項，因為功能持續開發中，項目隨時可能增減</li>
+				<li>./configure [編譯選項，請參閱上行]</li>
+				<li>make; make install</li>
+			</ol>
+		</section>
+		<section>
+			<h3>開發者</h3>
+			<ul>
+				<li><a href="http://pcmanx.blogspot.tw/">Hong Jen Yee 洪任諭 (pcman) (原作者及主要開發者)</a></li>
+				<li><a href="http://about.me/jserv">Jim Huang 黃敬群 (jserv)</a></li>
+				<li><a href="https://kanru.info/">Kanru Chen 陳侃如 (kanru)</a></li>
+				<li><a href="http://olvaffe.blogspot.tw/">Chia I Wu 吳佳一 (olv)</a></li>
+				<li><a href="https://about.me/fourdollars">Shih-Yuan Lee 李世元 (FourDollars)</a></li>
+				<li><a href="http://www.utcr.org/">Youchen Lee 李宥辰 (copyleft)</a></li>
+				<li><a href="https://sites.google.com/site/emfoxzhou/">Emfox Zhou 周玮 (emfox)</a></li>
+			</ul>
+		</section>
+	</article>
+</main>
