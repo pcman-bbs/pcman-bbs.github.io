@@ -82,6 +82,30 @@ aside {
 	}
 }
 
+.projects {
+	display: flex;
+	align-items: center;
+	a {
+		text-decoration: none;
+	}
+	li {
+		list-style-type: none;
+		display: inline-block;
+		flex-grow: 1;
+		line-height: 100%;
+		strong {
+			font-size: 2em;
+			margin-left: 1em;
+		}
+		img {
+			display: inline-block;
+			width: 50%;
+			height: auto;
+			vertical-align: middle;
+		}
+	}
+}
+
 footer {
 	text-align: center;
 	padding-bottom: 1em;
